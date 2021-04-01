@@ -4,7 +4,7 @@ const Main=()=>{
 
   return (
     <div>
-    Choose Food
+    Choose a Food
     </div>
   );
 }
