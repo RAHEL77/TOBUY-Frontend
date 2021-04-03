@@ -8,7 +8,7 @@ const Recipe=(props)=>{
 
                 <br/>
                 <Ingredent name={props.recipe.strIngredient1}/>
-                {/* <Ingredent measure={props.recipe.strIngredient1}/> */}
+                <Ingredent measure={props.recipe.strMeasure1}/>
             </fieldset>
         </div>
     )
