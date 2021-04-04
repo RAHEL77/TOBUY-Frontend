@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Recipe from "./Recipe";
+import RecipeItem from "./RecipeItem";
+import {Link} from 'react-router-dom';
 // import Navbar from './Navbar'
 const Main = () => {
-  const [stateData, setStateData] = useState(null);
+  const [stateData, setStateData] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [query, setQuery] = useState("Onion");
+  const [query, setQuery] = useState("chicken");
 
   const getDataFromAPI = async () => {
     try {
       const data = await axios.get(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
-      );
-      setStateData(data.data.meals);
+        );
+        console.log(data);
+        if(data.data.meals){
+          setStateData(data.data.meals);
+        }
       console.log(data.data.meals);
     } catch (e) {
       console.log(e, "api fetch error");
@@ -50,18 +54,20 @@ const Main = () => {
             }}
           />
           <input type="button" value="search" onClick={getNewQuery} />
-          {stateData == null ? (
+          <div style={{display:'flex', flexDirection:'row', flexWrap:'wrap'}}>
+          {stateData.length === 0 ? (
             <div>loading</div>
           ) : (
-            stateData.map((link) => {
+            stateData.map((item) => {
               return (
-                <Recipe
-                  key={link.idMeal}
-                  recipe={link}
+                <RecipeItem
+                  key={item.idMeal}
+                  recipe={item}
                 />
               );
             })
           )}
+          </div>
         </div>
       }
     </>
