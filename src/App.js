@@ -14,6 +14,7 @@ function App() {
           <Menu />
           <Route path="/" exact component={Main} />
           <Route path="/categories" exact component={Categories} />
+          <Route path="/recipe/:id" exact component={() => <div>I am a single recipe</div>} />
           {/* <Route path="/sentodo" exact component={SendTodo} /> */}
         </div>
       </BrowserRouter>
