@@ -8,7 +8,6 @@ const Main = () => {
   const [stateData, setStateData] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  // const [query, setQuery] = useState("");
 
   const getDataFromAPI = async () => {
     try {
@@ -29,18 +28,11 @@ const Main = () => {
       console.log(e, "api fetch error");
     }
   };
-//  useEffect(() => {
-//    getDataFromAPI();
-//  }, [query]);
 
 useEffect(() => {
   console.log('I am here');
    getDataFromAPI();
  }, []);
-
-  //const getSearchValue = (e) => {
-  //  console.log(e.target.value);
-  //};
 
   const submitHandler= (event) => {
     event.preventDefault();
@@ -48,7 +40,6 @@ useEffect(() => {
   };
 
   const resetQuery = () => {
-    /** */
     setSearchValue("");
    // setQuery("");
   };
