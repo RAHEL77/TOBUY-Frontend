@@ -1,8 +1,12 @@
 import Ingredent from "./Ingredent";
+import {Link, useParams} from 'react-router-dom'
+
 const RecipeItem = (props) => {
+  const params=useParams();
   return (
-    <div style={{ width: "25vw", height: "25vw", margin: "5px" }}>
-      <>
+
+<Link to={`/recipes/${props.recipe.idMeal}`} style={{ width: "25vw", height: "25vw", margin: "5px" }}>
+      
         <p>{props.recipe.strMeal}</p>
         <img
           src={props.recipe.strMealThumb}
@@ -11,8 +15,9 @@ const RecipeItem = (props) => {
         />
 
         <br />
-      </>
-    </div>
+     
+  </Link>
+   
   );
 };
 export default RecipeItem;

@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Category from './Category'
+import RecipeItem from './RecipeItem'
+import {useParams} from 'react-router-dom'
 
-const Categories = () => {
+const RecipeCategories = () => {
+  const params=useParams();
   const [stateData, setStateData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const getDataFromAPI = async () => {
     try {
+      console.log(params);
       setIsLoading(true);
       const data = await axios.get(
-        `https://www.themealdb.com/api/json/v1/1/categories.php`
+        `https://www.themealdb.com/api/json/v1/1/filter.php?c=${params.categoryName}`
       );
       console.log(data);
 
-      if (data.data.categories) {
-        setStateData(data.data.categories);
+      if (data.data.meals) {
+        setStateData(data.data.meals);
       } else {
         setStateData([]);
       }
@@ -46,12 +50,11 @@ const Categories = () => {
       ) : (
         stateData.map((item) => {
           return (
-            <Category  key={item.idCategory} item={item}/>
-
+            <RecipeItem key={item.idMeal} recipe={item}/>
         );
         })
       )}
     </div>
   );
 };
-export default Categories;
+export default RecipeCategories;
