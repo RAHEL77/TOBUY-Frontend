@@ -1,9 +1,11 @@
 import "./App.css";
 import Main from "./Components/Main";
 import Categories from "./Components/Categories";
-import RecipeCategories from "./Components/RecipeCategories";
+import RecipesInCategory from "./Components/RecipesInCategory";
 import Menu from "./Components/Menu";
 import RecipeDetails from "./Components/RecipeDetails";
+import Todo from "./Components/Todo";
+
 import { BrowserRouter, Route } from "react-router-dom";
 
 function App() {
@@ -13,9 +15,10 @@ function App() {
         <div>
           <Menu />
           <Route path="/" exact component={Main} />
-          <Route path="/categories/:categoryName" exact component={RecipeCategories} />
+          <Route path="/categories/:categoryName" exact component={RecipesInCategory} />
           <Route path="/categories" exact component={Categories} />
           <Route path="/recipes/:id" exact component={RecipeDetails} />
+          <Route path="/todo" exact component={Todo} />
         </div>
       </BrowserRouter>
     </div>

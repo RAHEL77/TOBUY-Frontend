@@ -1,5 +1,5 @@
 import React from "react";
-const Ingredent = ({ name, measure }) => {
+const Ingredent = ({ name, measure,showAdd,showDelete }) => {
   const addtodo=()=>{
     let todo=[];
     const jsonTodo=localStorage.getItem("todo")
@@ -10,11 +10,15 @@ const Ingredent = ({ name, measure }) => {
     todo.push({name,measure})
     localStorage.setItem("todo",JSON.stringify(todo))
   }
+  const deleteTodo=()=>{
+
+  }
   return (
-    <div style = {{display:"flex"}}>
+    <div style = {{display:"flex" ,flexDirection: "row", flexWrap: "wrap",alignItems:"center", justifyContent:"space-around"}}>
       <p>{name}</p>
       <p>{measure}</p>
-      <button type="button" onClick={addtodo}>add todo</button>
+     { showAdd!==false && <button type="button"  onClick={addtodo}>add todo</button>}
+     { showDelete && <button type="button"  onClick={deleteTodo}>Delete todo</button>}
     </div>
   );
 }; 

@@ -52,17 +52,21 @@ useEffect(() => {
         <div>
           <form onSubmit={submitHandler}>
             <input
-              style={{ color: "blue" }}
+              style={{ color: "blue" ,fontSize:"2em"}}
               type="text"
+              placeholder="type a name food"
+              size="25"
+              
               value={searchValue}
               onChange={(e) => {
                 setSearchValue(e.target.value);
               }}
             />
 
-            <input type="submit" value="search"  />
+            <input type="submit"    style={{ color: "blue" ,fontSize:"2em"}} value="search"  />
+          <input type="button"    style={{ color: "blue" ,fontSize:"2em"}} value="reset" onClick={resetQuery} />
           </form>
-          <input type="button" value="reset" onClick={resetQuery} />
+
           <div
             style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
           >

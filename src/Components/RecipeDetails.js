@@ -1,11 +1,11 @@
 import Ingredent from "./Ingredent";
 import RecipeItem from "./RecipeItem";
-import {useParams} from 'react-router-dom'
-import {useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const RecipeDetails = (props) => {
-  const params=useParams();
+  const params = useParams();
   const [stateData, setStateData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -17,7 +17,7 @@ const RecipeDetails = (props) => {
       );
       console.log(data);
 
-      if (data.data.meals && data.data.meals.length>0) {
+      if (data.data.meals && data.data.meals.length > 0) {
         setStateData(data.data.meals[0]);
       } else {
         setStateData([]);
@@ -29,12 +29,16 @@ const RecipeDetails = (props) => {
     }
   };
   useEffect(() => {
-    console.log('I am here');
-     getDataFromAPI();
-   }, []);
+    console.log("I am here");
+    getDataFromAPI();
+  }, []);
 
-  if(isLoading){
-    return <div><h1>Loading ... please wait</h1></div>
+  if (isLoading) {
+    return (
+      <div>
+        <h1>Loading ... please wait</h1>
+      </div>
+    );
   }
   return (
     <div style={{ margin: "5px" }}>

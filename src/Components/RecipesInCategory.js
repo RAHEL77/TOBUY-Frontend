@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Category from './Category'
 import RecipeItem from './RecipeItem'
 import {useParams} from 'react-router-dom'
 
-const RecipeCategories = () => {
+const RecipesInCategory = () => {
   const params=useParams();
   const [stateData, setStateData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -57,4 +56,4 @@ const RecipeCategories = () => {
     </div>
   );
 };
-export default RecipeCategories;
+export default RecipesInCategory;
