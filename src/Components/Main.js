@@ -52,10 +52,10 @@ useEffect(() => {
         <div>
           <form onSubmit={submitHandler}>
             <input
-              style={{ color: "blue" ,fontSize:"2em"}}
+              style={{ color: "gray" ,fontSize:"2em"}}
               type="text"
-              placeholder="type a name food"
-              size="25"
+              placeholder="type a food name "
+              size="15"
               
               value={searchValue}
               onChange={(e) => {
@@ -63,8 +63,8 @@ useEffect(() => {
               }}
             />
 
-            <input type="submit"    style={{ color: "blue" ,fontSize:"2em"}} value="search"  />
-          <input type="button"    style={{ color: "blue" ,fontSize:"2em"}} value="reset" onClick={resetQuery} />
+          <input type="submit"    style={{ color: "blue" ,fontSize:"2em"}} value="search"  />
+          <input type="button"    style={{ color: "gray" ,fontSize:"2em"}} value="reset" onClick={resetQuery} />
           </form>
 
           <div

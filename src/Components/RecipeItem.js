@@ -5,7 +5,8 @@ const RecipeItem = (props) => {
   const params=useParams();
   return (
 
-<Link to={`/recipes/${props.recipe.idMeal}`} style={{ width: "25vw", height: "25vw", margin: "5px" }}>
+<Link to={`/recipes/${props.recipe.idMeal}`} 
+      style={{  textDecoration: "none", width: "25vw", height: "25vw", margin: "5px" }}>
       
         <p>{props.recipe.strMeal}</p>
         <img

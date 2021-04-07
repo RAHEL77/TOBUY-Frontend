@@ -17,8 +17,14 @@ const Ingredent = ({ name, measure,showAdd,showDelete }) => {
     <div style = {{display:"flex" ,flexDirection: "row", flexWrap: "wrap",alignItems:"center", justifyContent:"space-around"}}>
       <p>{name}</p>
       <p>{measure}</p>
-     { showAdd!==false && <button type="button"  onClick={addtodo}>add todo</button>}
-     { showDelete && <button type="button"  onClick={deleteTodo}>Delete todo</button>}
+     {/* { showAdd!==false && <button type="button"  onClick={addtodo}>add todo</button>} */}
+     {/* { showDelete && <button type="button"  onClick={deleteTodo}>Delete todo</button>} */}
+     {  showAdd!==false && <input
+	   onCheck={addtodo}
+      	// onChange={() => setCheckboxValue(!checkboxValue)}
+	    type="checkbox"
+      onClick={addtodo}
+/>}
     </div>
   );
 }; 

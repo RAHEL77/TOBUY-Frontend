@@ -3,6 +3,8 @@ import axios from "axios";
 import Category from './Category'
 
 const Categories = () => {
+
+
   const [stateData, setStateData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -47,7 +49,6 @@ const Categories = () => {
         stateData.map((item) => {
           return (
             <Category  key={item.idCategory} item={item}/>
-
         );
         })
       )}

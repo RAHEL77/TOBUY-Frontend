@@ -48,6 +48,7 @@ const RecipeDetails = (props) => {
 
                 <br/> */}
         <RecipeItem recipe={stateData} />
+        <h2 style = {{color:"blue"}}>INGREDIENTS</h2>
         <Ingredent
           name={stateData.strIngredient1}
           measure={stateData.strMeasure1}
