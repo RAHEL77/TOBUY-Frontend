@@ -54,7 +54,7 @@ useEffect(() => {
             <input
               style={{ color: "gray" ,fontSize:"2em"}}
               type="text"
-              placeholder="type a food name "
+              placeholder="Enter the food name "
               size="15"
               
               value={searchValue}
